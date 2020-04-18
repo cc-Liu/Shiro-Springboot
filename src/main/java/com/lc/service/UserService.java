@@ -5,6 +5,8 @@ import com.lc.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -13,5 +15,9 @@ public class UserService {
 
     public User selecByName(String name){
         return userMapper.selectName(name);
+    }
+
+    public List<String> selectUserRole(String username,String password){
+        return  userMapper.getUserRole(username,password);
     }
 }
